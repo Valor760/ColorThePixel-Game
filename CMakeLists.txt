@@ -2,7 +2,11 @@ cmake_minimum_required(VERSION 3.16)
 
 project(ColorThePixel)
 
-set(CMAKE_CXX_STANDARD 17)
+if(WIN32)
+    set(CMAKE_CXX_STANDARD 17)
+else()
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -fstrict-aliasing -Wno-unknown-pragmas -Wno-unused-function")
+endif()
 
 file(GLOB_RECURSE SOURCE_FILES ${CMAKE_SOURCE_DIR}/source/*.cpp)
 file(GLOB_RECURSE HEADER_FILES ${CMAKE_SOURCE_DIR}/source/*.h)
