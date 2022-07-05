@@ -1,8 +1,8 @@
 #include "InputHandler.h"
 
 
-namespace ColorThePixel {
-void InputHandler::SetKey(int key, int scan_code, int mode) {
+namespace CTP {
+void InputHandler::setKey(int key, int scan_code, int mode) {
 	m_Keys[key] = {
 		.is_pressed = true,
 		.scan_code = scan_code,
@@ -10,7 +10,7 @@ void InputHandler::SetKey(int key, int scan_code, int mode) {
 	};
 }
 
-void InputHandler::ResetKey(int key) {
+void InputHandler::resetKey(int key) {
 	m_Keys[key] = {
 		.is_pressed = false,
 		.scan_code = -1,
@@ -31,11 +31,11 @@ glm::vec2 InputHandler::GetMousePos(GLFWwindow* window) {
 void InputHandler::KeyCallback(GLFWwindow* window, int key, int scan_code, int action, int mode) {
 	if (key >= 0 && key < 1024) {
 		if (action == GLFW_PRESS) {
-			SetKey(key, scan_code, mode);
+			setKey(key, scan_code, mode);
 		}
 		else if (action == GLFW_RELEASE) {
-			ResetKey(key);
+			resetKey(key);
 		}
 	}
 }
-} //namespace ColorThePixel
+} //namespace CTP

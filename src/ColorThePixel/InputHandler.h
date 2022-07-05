@@ -3,7 +3,7 @@
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
-namespace ColorThePixel {
+namespace CTP {
 // No action is saved because we are only interested
 // in GLFW_PRESS or GLFW_RELEASE. If GLFW_REPEAT occurs
 // it will be considered as GLFW_PRESS.
@@ -20,10 +20,10 @@ public:
 	static glm::vec2 GetMousePos(GLFWwindow* window);
 
 private:
-	static inline void SetKey(int key, int scan_code, int mode);
-	static inline void ResetKey(int key);
+	static inline void setKey(int key, int scan_code, int mode);
+	static inline void resetKey(int key);
 
 private:
 	static inline input_t m_Keys[1024] = {};
 };
-} //namespace ColorThePixel
+} //namespace CTP

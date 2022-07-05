@@ -1,0 +1,23 @@
+{
+  "env": {
+    "myDefaultIncludePath": [
+
+    ],
+    "myCompilerPath": ""
+  },
+  "configurations": [
+    {
+      "name": "Win32",
+      "intelliSenseMode": "msvc-x64",
+      "includePath": [
+        "${workspaceFolder}\\3rdparty",
+        "${workspaceFolder}\\3rdparty\\glm",
+        "${workspaceFolder}\\3rdparty\\glfw\\include"
+      ],
+      "defines": ["WIN32", "_DEBUG"],
+      "compilerPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\Hostx64\\x64\\cl.exe",
+      "cppStandard": "c++20" 
+    }
+  ],
+  "version": 4
+}

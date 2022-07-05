@@ -4,11 +4,13 @@
 #include <GLFW/glfw3.h>
 
 #include <iostream>
+#include <memory>
 
 #include "InputHandler.h"
+#include "Render/Renderer.h"
 
 
-namespace ColorThePixel {
+namespace CTP {
 class Game {
 public:
 
@@ -29,5 +31,7 @@ private:
 	// TODO: Make a config file and read resolution from it
 	const uint32_t m_wWidth = 1600;
 	const uint32_t m_wHeight = 900;
+
+	std::unique_ptr<Render::Renderer> m_Renderer;
 };
-}; //namespace ColorThePixel
+}; //namespace CTP

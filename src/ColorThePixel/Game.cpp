@@ -1,8 +1,10 @@
 #include "Game.h"
 
 
-namespace ColorThePixel {
-Game::Game() {}
+namespace CTP {
+Game::Game() {
+	m_Renderer = std::make_unique<Render::Renderer>();
+}
 
 Game::~Game() {
 	glfwDestroyWindow(m_Window);
@@ -29,6 +31,8 @@ void Game::Start() {
 	glViewport(0, 0, m_wWidth, m_wHeight);
 	glfwSetKeyCallback(m_Window, InputHandler::KeyCallback);
 
+	m_Renderer->CompileShaders("Shaders/texture.vert", "Shaders/texture.frag");
+
 	while (!glfwWindowShouldClose(m_Window)) {
 		glfwPollEvents();
 		glClearColor(0.5f, 0.1f, 0.3f, 1.0f);
@@ -40,4 +44,4 @@ void Game::Start() {
 GLFWwindow* Game::GetWindow() {
 	return m_Window;
 }
-} //namespace ColorThePixel
+} //namespace CTP
