@@ -1,7 +1,7 @@
 #include "ColorThePixel/Game.h"
 
 int main() {
-	ColorThePixel::Game game{};
+	CTP::Game game{};
 	game.Start();
 	return 0;
 }
