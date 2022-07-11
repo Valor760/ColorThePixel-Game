@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <memory>
+#include <unordered_map>
 
 #include "InputHandler.h"
 #include "Render/Renderer.h"
@@ -32,6 +33,8 @@ private:
 	const uint32_t m_wWidth = 1600;
 	const uint32_t m_wHeight = 900;
 
-	std::unique_ptr<Render::Renderer> m_Renderer;
+	std::unique_ptr<Render::Renderer> m_TextureRenderer;
+
+
 };
 }; //namespace CTP

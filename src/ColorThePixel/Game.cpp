@@ -3,7 +3,7 @@
 
 namespace CTP {
 Game::Game() {
-	m_Renderer = std::make_unique<Render::Renderer>();
+	m_TextureRenderer = std::make_unique<Render::Renderer>();
 }
 
 Game::~Game() {
@@ -31,7 +31,7 @@ void Game::Start() {
 	glViewport(0, 0, m_wWidth, m_wHeight);
 	glfwSetKeyCallback(m_Window, InputHandler::KeyCallback);
 
-	m_Renderer->CompileShaders("Shaders/texture.vert", "Shaders/texture.frag");
+	m_TextureRenderer->CompileShaders("Shaders/texture.vert", "Shaders/texture.frag");
 
 	while (!glfwWindowShouldClose(m_Window)) {
 		glfwPollEvents();
